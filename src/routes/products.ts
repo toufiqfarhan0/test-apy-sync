@@ -32,4 +32,10 @@ router.put("/api/products/:id", (req: Request, res: Response) => {
   res.status(200).json({ id, title, price });
 });
 
+// POST /api/products/bulk - Bulk create
+router.post("/api/products/bulk", (req: Request, res: Response) => {
+  const { products } = req.body;
+  res.status(201).json({ created: products?.length || 0 });
+});
+
 export default router;
