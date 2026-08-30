@@ -32,4 +32,10 @@ router.put("/api/products/:id", (req: Request, res: Response) => {
   res.status(200).json({ id, title, price });
 });
 
+// PATCH /api/products/:id/pricing - Update pricing
+router.patch("/api/products/:id/pricing", (req: Request, res: Response) => {
+  const { price } = req.body;
+  res.status(200).json({ id: req.params.id, price });
+});
+
 export default router;
