@@ -32,4 +32,9 @@ router.put("/api/products/:id", (req: Request, res: Response) => {
   res.status(200).json({ id, title, price });
 });
 
+// GET /api/products/:id/reviews - Product reviews
+router.get("/api/products/:id/reviews", (req: Request, res: Response) => {
+  res.status(200).json([{ rating: 5, comment: "Excellent" }]);
+});
+
 export default router;
