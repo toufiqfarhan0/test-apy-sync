@@ -32,4 +32,9 @@ router.put("/api/products/:id", (req: Request, res: Response) => {
   res.status(200).json({ id, title, price });
 });
 
+// DELETE /api/products/:id - Delete product
+router.delete("/api/products/:id", (req: Request, res: Response) => {
+  res.status(204).send();
+});
+
 export default router;
