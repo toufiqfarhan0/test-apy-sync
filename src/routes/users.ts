@@ -18,7 +18,8 @@ router.get("/api/users/:id", (req: Request, res: Response) => {
 
 // POST /api/users - Create new user
 router.post("/api/users", (req: Request, res: Response) => {
-  const { name, email } = req.body;
+  const { name, email, role } = req.body;
+  if (!role) return res.status(400).json({ error: 'Role is required' });
   if (!name || !email) {
     return res.status(400).json({ error: "Name and email are required" });
   }
