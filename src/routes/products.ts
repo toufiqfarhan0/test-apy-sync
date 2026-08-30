@@ -19,6 +19,7 @@ router.get("/api/products/:id", (req: Request, res: Response) => {
 // POST /api/products - Create product
 router.post("/api/products", (req: Request, res: Response) => {
   const { title, price } = req.body;
+  if (price < 0) return res.status(422).json({ error: 'Price must be positive' });
   if (!title || price === undefined) {
     return res.status(400).json({ error: "Title and price are required" });
   }
