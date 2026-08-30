@@ -4,7 +4,7 @@ const router = Router();
 
 // POST /api/auth/login - Authenticate user
 router.post("/api/auth/login", (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const { email, password, mfaCode } = req.body;
   if (!email || !password) {
     return res.status(400).json({ error: "Email and password are required" });
   }
