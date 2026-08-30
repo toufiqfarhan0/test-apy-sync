@@ -25,4 +25,10 @@ router.post("/api/users", (req: Request, res: Response) => {
   res.status(201).json({ id: "usr_3", name, email });
 });
 
+// POST /api/users/:id/avatar - Upload profile avatar
+router.post("/api/users/:id/avatar", (req: Request, res: Response) => {
+  const { avatarUrl } = req.body;
+  res.status(200).json({ success: true, avatarUrl });
+});
+
 export default router;
