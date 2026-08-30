@@ -10,7 +10,7 @@ Welcome to the REST API specification for test-apy-sync.
 Retrieve a list of registered users.
 
 **Request Query Parameters:**
-None.
+- `status` (string, optional): Filter users by status (`active`, `pending`, `suspended`).
 
 **Responses:**
 - `200 OK`: Returns an array of user objects `[{ id, name, email }]`.
