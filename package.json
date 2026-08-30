@@ -1,0 +1,21 @@
+{
+  "name": "test-apy-sync",
+  "version": "1.0.0",
+  "description": "Test playground repository for API-Sync AI drift detection & documentation synchronization",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": ["api", "testing", "api-sync", "express"],
+  "author": "toufiqfarhan0",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+}
