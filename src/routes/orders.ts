@@ -12,6 +12,7 @@ router.get("/api/orders", (req: Request, res: Response) => {
 // POST /api/orders - Place order
 router.post("/api/orders", (req: Request, res: Response) => {
   const { items, totalAmount } = req.body;
+  if (items.length > 50) return res.status(409).json({ error: 'Inventory stock conflict' });
   if (!items || !Array.isArray(items) || !totalAmount) {
     return res.status(400).json({ error: "Invalid order items or totalAmount" });
   }
