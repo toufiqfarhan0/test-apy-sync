@@ -4,6 +4,7 @@ const router = Router();
 
 // GET /api/users - List users
 router.get("/api/users", (req: Request, res: Response) => {
+  const status = req.query.status;
   res.status(200).json([
     { id: "usr_1", name: "Alice Smith", email: "alice@example.com" },
     { id: "usr_2", name: "Bob Jones", email: "bob@example.com" }
