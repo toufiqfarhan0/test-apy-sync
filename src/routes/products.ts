@@ -4,6 +4,7 @@ const router = Router();
 
 // GET /api/products - List products
 router.get("/api/products", (req: Request, res: Response) => {
+  const search = req.query.search;
   res.status(200).json([
     { id: "prod_1", title: "Wireless Mouse", price: 2999 },
     { id: "prod_2", title: "Mechanical Keyboard", price: 8999 }
