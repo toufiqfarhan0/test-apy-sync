@@ -4,6 +4,8 @@ const router = Router();
 
 // GET /api/products - List products
 router.get("/api/products", (req: Request, res: Response) => {
+  const category = req.query.category;
+  const minPrice = req.query.minPrice;
   res.status(200).json([
     { id: "prod_1", title: "Wireless Mouse", price: 2999 },
     { id: "prod_2", title: "Mechanical Keyboard", price: 8999 }
