@@ -8,6 +8,9 @@ router.post("/api/auth/login", (req: Request, res: Response) => {
   if (!email || !password) {
     return res.status(400).json({ error: "Email and password are required" });
   }
+  if (email.includes("locked")) {
+    return res.status(403).json({ error: "Account temporarily locked" });
+  }
   res.status(200).json({ token: "jwt_token_sample", user: { email } });
 });
 
