@@ -25,4 +25,9 @@ router.post("/api/users", (req: Request, res: Response) => {
   res.status(201).json({ id: "usr_3", name, email });
 });
 
+// DELETE /api/users/:id - Delete user account
+router.delete("/api/users/:id", (req: Request, res: Response) => {
+  res.status(204).send();
+});
+
 export default router;
