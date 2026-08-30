@@ -18,7 +18,8 @@ router.get("/api/products/:id", (req: Request, res: Response) => {
 
 // POST /api/products - Create product
 router.post("/api/products", (req: Request, res: Response) => {
-  const { title, price } = req.body;
+  const { title, price, stockCount } = req.body;
+  if (stockCount === undefined) return res.status(400).json({ error: 'stockCount required' });
   if (!title || price === undefined) {
     return res.status(400).json({ error: "Title and price are required" });
   }
