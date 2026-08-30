@@ -24,4 +24,9 @@ router.get("/api/orders/:id", (req: Request, res: Response) => {
   res.status(200).json({ id, status: "pending" });
 });
 
+// POST /api/orders/:id/cancel - Cancel order
+router.post("/api/orders/:id/cancel", (req: Request, res: Response) => {
+  res.status(200).json({ success: true, status: "cancelled" });
+});
+
 export default router;
