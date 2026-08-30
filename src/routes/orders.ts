@@ -24,4 +24,9 @@ router.get("/api/orders/:id", (req: Request, res: Response) => {
   res.status(200).json({ id, status: "pending" });
 });
 
+// GET /api/orders/:id/tracking - Shipment tracking
+router.get("/api/orders/:id/tracking", (req: Request, res: Response) => {
+  res.status(200).json({ orderId: req.params.id, carrier: "UPS", trackingNumber: "1Z999999" });
+});
+
 export default router;
