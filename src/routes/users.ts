@@ -13,6 +13,9 @@ router.get("/api/users", (req: Request, res: Response) => {
 // GET /api/users/:id - Get user profile
 router.get("/api/users/:id", (req: Request, res: Response) => {
   const { id } = req.params;
+  if (id === "unknown") {
+    return res.status(404).json({ error: "User not found" });
+  }
   res.status(200).json({ id, name: "Alice Smith", email: "alice@example.com" });
 });
 
