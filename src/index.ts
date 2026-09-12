@@ -22,6 +22,11 @@ app.use(teamsRouter);
 app.use(notificationsRouter);
 app.use(analyticsRouter);
 
+// GET /api/health - Service health status
+app.get("/api/health", (_req, res) => {
+  res.status(200).json({ status: "ok", uptime: process.uptime() });
+});
+
 const PORT = process.env.PORT || 3001;
 if (process.env.NODE_ENV !== "test") {
   app.listen(PORT, () => {
