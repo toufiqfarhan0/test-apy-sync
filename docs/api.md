@@ -4,6 +4,16 @@ Welcome to the REST API specification for test-apy-sync.
 
 ---
 
+## Health API
+
+### GET /api/health
+Retrieve service uptime and operational status.
+
+**Responses:**
+- `200 OK`: Returns `{ status: "ok", uptime: number }`.
+
+---
+
 ## Users API
 
 ### GET /api/users
