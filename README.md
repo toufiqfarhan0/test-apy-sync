@@ -57,8 +57,21 @@ It contains an Express REST API codebase with documentation in `docs/api.md` and
 
 ---
 
+## Quickstart & Local Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Build and start the Express API development server
+npm run build && npm start
+```
+
+---
+
 ## Technical Specifications
 - Runtime: Node.js & TypeScript
 - Framework: Express.js REST API
 - Documentation Format: Markdown (`docs/api.md`)
 - Testing Companion: API-Sync AI (https://github.com/toufiqfarhan0/api-sync)
+
